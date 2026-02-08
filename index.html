@@ -1,63 +1,116 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta />
-    <meta />
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Kanban Task Management</title>
   </head>
 
-  <body>
-    <!-- Navigation Sidebar: Contains the logo, navigation links for boards, and theme toggle. -->
-    <nav>
-      <div>
-        <h4>ALL BOARDS (1)</h4>
-        <button>Launch Career</button>
+  <body class="font-[Plus Jakarta Sans] flex flex-row w-full min-h-screen bg-[#f4f7fd] text-base">
+    <!-- Sidebar -->
+    <nav class="flex flex-col bg-white border-r border-[#e4ebfa] w-[300px] h-screen hidden md:flex">
+      <div class="mt-[33px] ml-[34px] mb-[54px] mr-[113px] flex justify-start">
+        <img src="./assets/logo-light.svg" alt="logo-light" class="w-full" />
+      </div>
+
+      <div class="flex flex-col text-black">
+        <h4 class="pl-[50px] pr-[12px] text-[#828fa3] text-xs tracking-[0.125rem]">
+          ALL BOARDS (1)
+        </h4>
+        <button
+          class="flex items-center gap-[10px] bg-[#635fc7] text-white rounded-r-full h-[48px] w-[276px] pl-[50px] pr-[12px] text-[0.9375rem] font-bold cursor-pointer overflow-hidden"
+        >
+          Launch Career
+        </button>
       </div>
     </nav>
 
-    <!-- Main Layout: Header with board title, add task button, and main content area for task columns. -->
-    <div>
-      <header>
-        <div>
-          <h2>Launch Career</h2>
+    <!-- Main Layout -->
+    <div class="flex-1 overflow-x-hidden w-full">
+      <!-- Header -->
+      <header
+        class="flex items-center justify-between bg-white text-black h-[96px] px-[30px] pr-[35px] border-b border-[#e4ebfa] text-[1.875rem] font-semibold md:h-[64px] md:px-[18px] md:pr-[10px] md:text-base"
+      >
+        <div class="flex items-center">
+          <img
+            src="./assets/favicon.svg"
+            alt="logo-mobile"
+            class="hidden md:block w-[30px] h-[30px] mr-[10px]"
+          />
+          <h2 class="text-xl m-0">Launch Career</h2>
         </div>
       </header>
 
-      <div>
-        <main>
-          <!-- Task Columns: Display tasks grouped by status (TODO, DOING, DONE). -->
-          <div>
-            <div>
-              <span></span>
-              <h4>TODO</h4>
+      <!-- Columns -->
+      <div class="flex flex-col pl-[35px] box-border md:pl-0 md:items-center">
+        <main
+          class="grid grid-cols-3 gap-2 md:grid-cols-2 sm:grid-cols-1"
+        >
+          <!-- TODO Column -->
+          <div class="flex flex-col gap-5 p-3 sm:p-6">
+            <div class="flex items-center gap-2 sm:gap-2">
+              <span class="inline-block h-[15px] w-[15px] sm:h-[8px] sm:w-[8px] rounded-full bg-[#49c4e5]"></span>
+              <h4 class="text-xs tracking-[0.125rem] text-[#828fa3] m-0">
+                TODO (4)
+              </h4>
             </div>
-            <!-- Tasks container for TODO -->
-            <div>
-              <div>Launch Epic Career 🚀</div>
-              <div>Learn Data Structures and Algorithms 📚</div>
+            <div class="flex flex-col">
+              <div
+                class="flex items-center pl-[15px] w-full h-[60px] bg-white text-black rounded-xl shadow-md cursor-pointer mb-5 text-[0.9375rem] font-bold"
+              >
+                Launch Epic Career 🚀
+              </div>
+              <div class="flex items-center pl-[15px] w-full h-[60px] bg-white text-black rounded-xl shadow-md cursor-pointer mb-5 text-[0.9375rem] font-bold">
+                Conquer React⚛️
+              </div>
+              <div class="flex items-center pl-[15px] w-full h-[60px] bg-white text-black rounded-xl shadow-md cursor-pointer mb-5 text-[0.9375rem] font-bold">
+                Understand Databases⚙️
+              </div>
+              <div class="flex items-center pl-[15px] w-full h-[60px] bg-white text-black rounded-xl shadow-md cursor-pointer mb-5 text-[0.9375rem] font-bold">
+                Crush Frameworks🖼️
+              </div>
             </div>
           </div>
+
           <!-- DOING Column -->
-          <div>
-            <div>
-              <span></span>
-              <h4>DOING</h4>
+          <div class="flex flex-col gap-5 p-3 sm:p-6">
+            <div class="flex items-center gap-2 sm:gap-2">
+              <span class="inline-block h-[15px] w-[15px] sm:h-[8px] sm:w-[8px] rounded-full bg-[#8471f2]"></span>
+              <h4 class="text-xs tracking-[0.125rem] text-[#828fa3] m-0">
+                DOING (2)
+              </h4>
             </div>
-            <!-- Tasks container for DOING -->
-            <div>
-              <div>Master JavaScript 💛</div>
-              <div>Keep on Going 🏆</div>
+            <div class="flex flex-col">
+              <div class="flex items-center pl-[15px] w-full h-[60px] bg-white text-black rounded-xl shadow-md cursor-pointer mb-5 text-[0.9375rem] font-bold">
+                Master JavaScript 💛
+              </div>
+              <div class="flex items-center pl-[15px] w-full h-[60px] bg-white text-black rounded-xl shadow-md cursor-pointer mb-5 text-[0.9375rem] font-bold">
+                Never Give Up 🏆
+              </div>
             </div>
           </div>
+
           <!-- DONE Column -->
-          <div>
-            <div>
-              <span></span>
-              <h4>DONE</h4>
+          <div class="flex flex-col gap-5 p-3 sm:p-6">
+            <div class="flex items-center gap-2 sm:gap-2">
+              <span class="inline-block h-[15px] w-[15px] sm:h-[8px] sm:w-[8px] rounded-full bg-[#219c90]"></span>
+              <h4 class="text-xs tracking-[0.125rem] text-[#828fa3] m-0">
+                DONE (2)
+              </h4>
             </div>
-            <!-- Tasks container for DONE -->
-            <div>
-              <div>Contribute to Open Source Projects 🌐</div>
-              <div>Build Portfolio Projects 🛠️</div>
+            <div class="flex flex-col">
+              <div class="flex items-center pl-[15px] w-full h-[60px] bg-white text-black rounded-xl shadow-md cursor-pointer mb-5 text-[0.9375rem] font-bold">
+                Explore ES6 Features 🚀
+              </div>
+              <div class="flex items-center pl-[15px] w-full h-[60px] bg-white text-black rounded-xl shadow-md cursor-pointer mb-5 text-[0.9375rem] font-bold">
+                Have fun 🥳
+              </div>
             </div>
           </div>
         </main>
@@ -65,3 +118,4 @@
     </div>
   </body>
 </html>
+
