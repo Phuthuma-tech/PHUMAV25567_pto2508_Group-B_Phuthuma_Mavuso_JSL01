@@ -23,11 +23,17 @@
         <h4 class="pl-[50px] pr-[12px] text-[#828fa3] text-xs tracking-[0.125rem]">
           ALL BOARDS (1)
         </h4>
+        <!-- Desktop button -->
         <button
-          class="flex items-center gap-[10px] bg-[#635fc7] text-white rounded-r-full h-[48px] w-[276px] pl-[50px] pr-[12px] text-[0.9375rem] font-bold cursor-pointer overflow-hidden"
+          class="hidden sm:flex items-center bg-[#635fc7] text-white rounded-r-full h-[48px] w-[276px] pl-[50px] pr-[12px] text-[0.9375rem] font-bold cursor-pointer overflow-hidden"
         >
           Launch Career
         </button>
+        <!-- Mobile replacement at ≤640px -->
+        <div class="flex sm:hidden items-center gap-2 pl-4 pt-4 h-[48px]">
+          <img src="./assets/favicon.svg" alt="logo-mobile" class="w-6 h-6" />
+          <span class="text-black font-bold text-base leading-none">Kanban</span>
+        </div>
       </div>
     </nav>
 
@@ -38,32 +44,34 @@
         class="flex items-center justify-between bg-white text-black h-[96px] px-[30px] pr-[35px] border-b border-[#e4ebfa] text-[1.875rem] font-semibold md:h-[64px] md:px-[18px] md:pr-[10px] md:text-base"
       >
         <div class="flex items-center">
-          <img
-            src="./assets/favicon.svg"
-            alt="logo-mobile"
-            class="hidden md:block w-[30px] h-[30px] mr-[10px]"
-          />
-          <h2 class="text-xl m-0">Launch Career</h2>
+          <!-- Desktop header -->
+          <div class="hidden sm:flex items-center">
+            <img
+              src="./assets/favicon.svg"
+              alt="logo-mobile"
+              class="hidden md:block w-[30px] h-[30px] mr-[10px]"
+            />
+            <h2 class="text-xl m-0">Launch Career</h2>
+          </div>
+          <!-- Mobile header at ≤640px -->
+          <div class="flex sm:hidden items-center gap-2 h-[30px]">
+            <img src="./assets/favicon.svg" alt="logo-mobile" class="w-6 h-6" />
+            <h2 class="text-black font-bold text-base leading-none m-0">Kanban</h2>
+          </div>
         </div>
       </header>
 
       <!-- Columns -->
       <div class="flex flex-col pl-[35px] box-border md:pl-0 md:items-center">
-        <main
-          class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4"
-        >
+        <main class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4">
           <!-- TODO Column -->
           <div class="flex flex-col gap-5 p-3 sm:p-6">
             <div class="flex items-center gap-2 sm:gap-2">
               <span class="inline-block h-[15px] w-[15px] sm:h-[8px] sm:w-[8px] rounded-full bg-[#49c4e5]"></span>
-              <h4 class="text-xs tracking-[0.125rem] text-[#828fa3] m-0">
-                TODO (4)
-              </h4>
+              <h4 class="text-xs tracking-[0.125rem] text-[#828fa3] m-0">TODO (4)</h4>
             </div>
             <div class="flex flex-col">
-              <div
-                class="flex items-center pl-[15px] w-full h-[60px] bg-white text-black rounded-xl shadow-md cursor-pointer mb-5 text-[0.9375rem] font-bold"
-              >
+              <div class="flex items-center pl-[15px] w-full h-[60px] bg-white text-black rounded-xl shadow-md cursor-pointer mb-5 text-[0.9375rem] font-bold">
                 Launch Epic Career 🚀
               </div>
               <div class="flex items-center pl-[15px] w-full h-[60px] bg-white text-black rounded-xl shadow-md cursor-pointer mb-5 text-[0.9375rem] font-bold">
@@ -82,9 +90,7 @@
           <div class="flex flex-col gap-5 p-3 sm:p-6">
             <div class="flex items-center gap-2 sm:gap-2">
               <span class="inline-block h-[15px] w-[15px] sm:h-[8px] sm:w-[8px] rounded-full bg-[#8471f2]"></span>
-              <h4 class="text-xs tracking-[0.125rem] text-[#828fa3] m-0">
-                DOING (2)
-              </h4>
+              <h4 class="text-xs tracking-[0.125rem] text-[#828fa3] m-0">DOING (2)</h4>
             </div>
             <div class="flex flex-col">
               <div class="flex items-center pl-[15px] w-full h-[60px] bg-white text-black rounded-xl shadow-md cursor-pointer mb-5 text-[0.9375rem] font-bold">
@@ -100,9 +106,7 @@
           <div class="flex flex-col gap-5 p-3 sm:p-6">
             <div class="flex items-center gap-2 sm:gap-2">
               <span class="inline-block h-[15px] w-[15px] sm:h-[8px] sm:w-[8px] rounded-full bg-[#219c90]"></span>
-              <h4 class="text-xs tracking-[0.125rem] text-[#828fa3] m-0">
-                DONE (2)
-              </h4>
+              <h4 class="text-xs tracking-[0.125rem] text-[#828fa3] m-0">DONE (2)</h4>
             </div>
             <div class="flex flex-col">
               <div class="flex items-center pl-[15px] w-full h-[60px] bg-white text-black rounded-xl shadow-md cursor-pointer mb-5 text-[0.9375rem] font-bold">
@@ -118,3 +122,4 @@
     </div>
   </body>
 </html>
+
